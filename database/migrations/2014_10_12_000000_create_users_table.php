@@ -8,6 +8,8 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
+     *
+     * added a user type to differentiate the users
      */
     public function up(): void
     {
@@ -17,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
+            $table->string('user_type')->default("user");
             $table->rememberToken();
             $table->timestamps();
         });
